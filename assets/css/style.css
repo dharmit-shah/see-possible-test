@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {margin: 0;padding: 0;box-sizing: border-box;font-family: Inter, Inter;}
+:root {scroll-behavior: smooth;--swiper-navigation-size: 5px;}
+body{background-color: #FAFAFA;}
+::-webkit-scrollbar {width: 8px;}
+::-webkit-scrollbar-track {border-radius: 10px;-webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);}
+::-webkit-scrollbar-thumb {border-radius: 10px;background-color: #dddddd;}
+p {margin-bottom: 0 !important;}
+a {color: #000 !important;text-decoration: none !important;}
+a:hover {color: #000 !important;text-decoration: none !important;}
+
+/* ------------- Custom CSS ----------------- */
+/* header */
+.header_component{padding:15px 20px;background-color:#fff;box-shadow:0 5px 10px 0 rgba(138,155,165,.15);position:fixed;width:100%;z-index:1000;-webkit-transition:all .3s ease-out;transition:all .3s ease-out}
+.header_section button{background-color:#C59D93;padding:12px 25px;color:#fff;border:none;font-size:15px;border-radius:50px}
+.header_menu a{line-height:30px;height:30px}
+.header_menu a:hover{border-bottom:1px solid #C59D93}
+.header_section img{height:40px;width:auto}
+/* footer */
+.footer_menu a,.footer_contact a{margin-bottom:5px}
+.footer_img img{height:60px;width:auto}
+.footer_component{padding:40px 0;background-color:#C59D93}
+/* breadcrumb */
+.breadcrumb_section{width: 100%;justify-content: center;}
+.breadcrumb_section p{font-size: 14px;}
+/* tabs */
+.order_component{padding-top:95px;padding-bottom:30px}
+.tab-container{width:100%;margin:20px}
+.tabs{display:flex;justify-content:center;margin-bottom:15px}
+.tabs button{background-color:#fff;border:1px solid #d3d3d3;outline:none;padding:20px 10px;width:170px;cursor:pointer;transition:background-color .3s;display:flex;align-items:center;gap:7px;justify-content:center}
+.tabs button:hover{background-color:#C59D93}
+.tabs button.active{background-color:transparent;border:1.5px solid #C59D93}
+.tabcontent-container{padding-top:10px}
+.tabcontent{display:none;animation:fadeIn .5s}
+.tabcontent.active{display:block}
+@keyframes fadeIn {
+from{opacity:0}
+to{opacity:1}
+}
+.payment_detail_component,.payment_total_component{width:calc(50% - 10px);background-color:#fff;padding:25px}
+.payment_total_component{background-color:#FAFAFA;padding:0}
+.detail_section .tabs button:first-child{border-radius:4px 0 0 4px}
+.detail_section .tabs button:last-child{border-radius:0 4px 4px 0}
+.payment_detail_component h2{margin:25px 0}
+/* contact Info */
+.form-item{position:relative;margin-bottom:15px}
+.form-item input{display:block;width:100%;height:42px;background:#fff;border:solid 1px #ccc;transition:all .3s ease;padding:0 15px;border-radius:5px}
+.form-item select{display:block;width:100%;height:44px;background:#fff;border:solid 1px #ccc;transition:all .3s ease;padding:0 15px;border-radius:5px}
+.form-item input:focus{border-color:#c59d93}
+.form-item label{position:absolute;cursor:text;z-index:2;top:14px;left:6px;font-size:14px;font-weight:400;background:#fff;padding:0 10px;color:#999;transition:all .3s ease}
+.form-item input:focus + label,.form-item input:valid + label{font-size:10px;top:1px}
+.form-item select:focus + label,.form-item select:valid + label{font-size:10px;top:1px}
+.form-item select:focus + label{color:#c59d93}
+.form-item input:focus + label{color:#c59d93}
+.login_account p,.login_account a{font-size:13px}
+.highlight_text{color:#C59D93!important}
+.icon{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:16px;color:#aaa;pointer-events:none}
+.tabcontent{display:flex}
+.email_id{padding:15px;background-color:#FAFAFA;height:70px;border-radius:4px;border:1px solid #ebebeb}
+.address_details{padding:15px;background-color:#FAFAFA;border-radius:4px;border:1px solid #ebebeb}
+.tab1_content h4{font-size:16px}
+.detail_section{width:100%}
+.continue_btn{background-color:#C59D93;display:flex;justify-content:center;align-items:center;color:#fff;width:100%;border-radius:5px;padding:10px;border:none;margin-top:20px}
+.iti--allow-dropdown{width:100%}
+.return_bag{font-size:13px}
+/* product cart Details */
+.product_img img{height:60px;width:auto}
+.product_number p{position:absolute;top:-70px;right:-5px;font-size:10px;font-weight:800;padding:1px;border-radius:50px;background-color:#d3d3d3;height:17px;width:17px;display:flex;justify-content:center;align-items:center}
+.product_number{position:relative}
+.product_cart_details{background:#fff;padding:15px}
+.product_purchased_details h4{font-size:15px}
+.product_purchased_details p{font-size:14px}
+.product_purchased_price{font-size:16px;font-weight:600}
+.product_cart_details{font-size:14px;font-weight:500}
+.product_cart_details .cart_price_details:last-child{border-bottom:1px solid #c9c9c9;padding-bottom:15px}
+.cart_price_total p{font-weight:700;font-size:16px}
+.privacy_policy{font-size:14px}
+/* Right column that will be conditionally fixed */
+.payment_total_component{position:sticky;top:0;z-index:10;height:100vh}
+.copyright_sec{padding:10px}
+@media (max-width:768px) {
+    #payment{flex-direction:column-reverse;gap:25px}
+    .payment_detail_component,.payment_total_component{width:100%;background-color:#fff;padding:15px}
+    .payment_total_component{position:sticky;top:0;z-index:10;height:auto}
+    .footer_sec{flex-wrap:wrap}
+}
+@media (max-width:500px) {
+    #payment{flex-direction:column-reverse;gap:25px}
+    .tab1_content h4{font-size:14px}
+    .form_input_response{flex-direction:column}
+    .payment_total_component{position:relative;height:auto}
+    .payment_detail_component{margin-right:0}
+    .payment_detail_component,.payment_total_component{width:100%;background-color:#fff;padding:15px}
+    .footer_sec{flex-direction:column}
+    .product_cart_details{background:#fff;padding:0}
+    .product_purchased_details h4{font-size:12px}
+    .product_purchased_details p{font-size:12px}
+    .product_purchased_price{font-size:14px;font-weight:600}
+    .tabs button{padding:15px 10px;gap:5px}
+    .product_img img{height:50px;width:auto}
+    .product_number p{top:-60px}
+}
+

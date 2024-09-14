@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PerTe - Payment Page </title>
+    <!-- fevicon icon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/fevicon.png">
+    <!-- common css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/fonts/style.css">
+    <!-- CDN of Phone Number -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/utils.min.js"></script>
+
+    <!-- for common header/footer -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script>
+        $(function () { $("#header").load("header.html"); $("#footer").load("footer.html"); });
+    </script>
+</head>
+
+<body>
+    <!-- header -->
+    <div id="header"></div>
+
+    <!-- CONTENT AREA -->
+    <section class="container d-flex order_component">
+        <div class="w-100">
+            <form action="" id="payment" class="d-flex justify-content-between">
+                <!-- how would you like your order -->
+                <div class="payment_detail_component d-flex flex-wrap flex-column align-items-center" id="left-column">
+                    <!-- breadcrumb -->
+                    <div class="breadcrumb_component d-flex gap-1 container-fluid">
+                        <div class="breadcrumb_section d-flex gap-1">
+                            <p>Information</p>
+                            <span class="icon-keyboard_arrow_right"></span>
+                            <p>Delivery</p>
+                            <span class="icon-keyboard_arrow_right"></span>
+                            <p>Payment</p>
+                        </div>
+                    </div>
+                    <h2>How would you like to get your order?</h2>
+                    <div class="detail_section">
+                        <div class="tabs">
+                            <button type="button" class="tablinks active" onclick="openTab(event, 'Tab1')">
+                                <span class="icon-truck"></span>
+                                I'd like it delivered</button>
+                            <button type="button" class="tablinks" onclick="openTab(event, 'Tab2')">
+                                <span class="icon-clean_hands"></span>
+                                I'll pick it up</button>
+                        </div>
+                        <div class="tabcontent-container">
+                            <!-- tab 1 -->
+                            <div id="Tab1" class="active flex-column gap-3 tabcontent">
+                                <div class="delivered_details mb-4 d-flex flex-column">
+                                    <div class="d-flex justify-content-between mb-2 tab1_content">
+                                        <h4>Contact Information</h4>
+                                        <div class="d-flex login_account">
+                                            <p>Have an Account?</p>
+                                            <a href="javascript:void()" class="highlight_text">&nbsp; login</a>
+                                        </div>
+                                    </div>
+                                    <!-- contact Info -->
+                                    <div class="email_id">
+                                        <div class="form">
+                                            <div class="form-item">
+                                                <input type="email" id="email" name="email" autocomplete="off" required
+                                                    value="hemaxi@ceepossible.com">
+                                                <label for="email">Email Address</label>
+                                                <span class="icon-mail icon"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="delivered_address d-flex flex-column">
+                                    <div class="d-flex justify-content-between mb-2 tab1_content">
+                                        <h4>Where should we send your order?</h4>
+                                    </div>
+                                    <!-- contact Info -->
+                                    <div class="address_details">
+                                        <div class="form">
+                                            <div class="form-item">
+                                                <input type="text" id="fname" name="fname" autocomplete="off" required>
+                                                <label for="fname">First name</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <input type="text" id="lname" name="lname" autocomplete="off" required>
+                                                <label for="lname">Last name</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <input type="text" id="apt" name="apt" autocomplete="off" required>
+                                                <label for="apt">Appartment / Suite / Building</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <input type="text" id="saddress" name="saddress" autocomplete="off"
+                                                    required>
+                                                <label for="saddress">Street Address</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <input type="text" id="landmakark" name="landmakark" autocomplete="off"
+                                                    required>
+                                                <label for="landmakark">Landmark</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <select id="country" name="country" required>
+                                                    <!-- <option value="" selected>Country</option> -->
+                                                    <option value="US">United States</option>
+                                                    <option value="CA">Canada</option>
+                                                    <option value="GB">United Kingdom</option>
+                                                    <option value="IN">India</option>
+                                                    <option value="AU">Australia</option>
+                                                    <option value="DE">Germany</option>
+                                                    <option value="FR">France</option>
+                                                    <option value="CN">China</option>
+                                                    <option value="JP">Japan</option>
+                                                    <option value="BR">Brazil</option>
+                                                </select>
+                                                <label for="country" class="dropdown-label">Country</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <select id="state" name="State" required>
+                                                    <option value="US" disabled selected>Please select Region, State or
+                                                        Province.</option>
+                                                    <option value="CA">Canada</option>
+                                                    <option value="GB">United Kingdom</option>
+                                                    <option value="IN">India</option>
+                                                    <option value="AU">Australia</option>
+                                                    <option value="DE">Germany</option>
+                                                    <option value="FR">France</option>
+                                                    <option value="CN">China</option>
+                                                    <option value="JP">Japan</option>
+                                                    <option value="BR">Brazil</option>
+                                                </select>
+                                                <label for="state" class="dropdown-label">State / Province</label>
+                                            </div>
+                                            <div class="d-flex justify-content-between form_input_response">
+                                                <div class="form-item">
+                                                    <input type="text" id="city" name="city" autocomplete="off"
+                                                        required>
+                                                    <label for="city">City</label>
+                                                </div>
+
+                                                <div class="form-item">
+                                                    <input type="text" id="zip" name="zip" autocomplete="off" required>
+                                                    <label for="zip">Zip Code</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-item">
+                                                <input type="text" id="company" name="company" autocomplete="off"
+                                                    required>
+                                                <label for="company">Company</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <input type="text" id="vatNumber" name="vatNumber" autocomplete="off"
+                                                    required>
+                                                <label for="vatNumber">VAT Number</label>
+                                            </div>
+                                            <div class="form-item">
+                                                <input type="tel" class="w-100" id="phoneInput"
+                                                    placeholder="Enter phone number" name="phone" autocomplete="off"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- tab 2 -->
+                            <div id="Tab2" class="tabcontent" style="display:none;">
+                                <div class="delivered_details mb-4 d-flex flex-column">
+                                    <div class="d-flex justify-content-between mb-2 tab1_content">
+                                        <h4>Contact Information</h4>
+                                        <div class="d-flex login_account">
+                                            <p>Have an Account?</p>
+                                            <a href="javascript:void()" class="highlight_text">&nbsp; login</a>
+                                        </div>
+                                    </div>
+                                    <!-- contact Info -->
+                                    <div class="email_id">
+                                        <div class="form">
+                                            <div class="form-item">
+                                                <input type="email" id="email" name="email" autocomplete="off" required
+                                                    value="hemaxi@ceepossible.com">
+                                                <label for="email">Email Address</label>
+                                                <span class="icon-mail icon"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="delivered_address d-flex flex-column">
+                                    <div class="d-flex justify-content-between mb-2 tab1_content">
+                                        <h4>Where should we send your order?</h4>
+                                    </div>
+                                    <!-- contact Info -->
+                                    <div class="address_details">
+                                        <div class="form">
+                                            <div class="d-flex justify-content-between form_input_response">
+                                                <div class="form-item">
+                                                    <input type="text" id="fname" name="fname" autocomplete="off"
+                                                        required>
+                                                    <label for="fname">First name</label>
+                                                </div>
+                                                <div class="form-item">
+                                                    <input type="text" id="lname" name="lname" autocomplete="off"
+                                                        required>
+                                                    <label for="lname">Last name</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-item">
+                                                <input type="tel" class="w-100" id="phoneInput2"
+                                                    placeholder="Enter phone number" name="phone2" autocomplete="off"
+                                                    required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-column align-items-center gap-2">
+                                <input type="submit" class="continue_btn" value="Continue To Delivery"
+                                    title="Continue To Delivery">
+                                <a href="javascript:void()" title="Return to Bag"
+                                    class="highlight_text d-flex gap-1 justify-content-center align-items-center return_bag"><span
+                                        class="icon-keyboard_arrow_left"></span>
+                                    Return to Bag</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- cart -->
+                <div class="payment_total_component d-flex flex-column gap-3">
+                    <div class="content d-flex flex-column gap-3" id="right-column">
+                        <div class="product_cart_details d-flex justify-content-between align-items-center">
+                            <div class="d-flex gap-3">
+                                <div class="product_img">
+                                    <img src="assets/img/product.avif" alt="Product Name">
+                                    <div class="product_number">
+                                        <p>1</p>
+                                    </div>
+                                </div>
+
+                                <div class="product_purchased_details d-flex flex-column">
+                                    <h4>Beautiful Tear Cluster Ring</h4>
+                                    <p>Metal: 18K Gold Metal Finish: Rose Yours</p>
+                                    <p>Size: 7.5</p>
+                                </div>
+                            </div>
+
+                            <div class="product_purchased_price d-flex flex-column">
+                                <p>$193,499</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="product_cart_details d-flex flex-column gap-3 justify-content-between align-items-center">
+                            <div class="d-flex w-100 flex-column gap-3 justify-content-between align-items-center">
+                                <div class="d-flex w-100 justify-content-between cart_price_details">
+                                    <p>Cart Sub Total</p>
+                                    <p>$193,499</p>
+                                </div>
+                                <div class="d-flex w-100 justify-content-between cart_price_details">
+                                    <p>Shipping</p>
+                                    <p>$0</p>
+                                </div>
+                                <div class="d-flex w-100 justify-content-between cart_price_details">
+                                    <p>Estimated Tax</p>
+                                    <p>$0</p>
+                                </div>
+                                <div class="align-items-center d-flex justify-content-between cart_price_details w-100">
+                                    <p class="d-flex gap-2 align-items-center">Have a Promo Code
+                                        <span class="align-items-center d-flex highlight_text justify-content-center"
+                                            style="cursor: pointer;" title="Redeem Now">Redeem Now
+                                            <span style="height: 20px;" class="icon-keyboard_arrow_down"></span>
+                                        </span>
+                                    </p>
+                                    <p>&nbsp;</p>
+                                </div>
+                            </div>
+
+                            <div class="d-flex w-100 justify-content-between cart_price_total">
+                                <p>Cart Sub Total</p>
+                                <p>$193,499</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between privacy_policy">
+                            <p class="highlight_text">Refund Policy</p>
+                            <p class="highlight_text">Privacy Policy</p>
+                            <p class="highlight_text">Terms of Service</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <div id="footer"></div>
+    <script src="./assets/js/theme.js"></script>
+</body>
+
+</html>
