@@ -61,7 +61,8 @@ to{opacity:1}
 .address_details{padding:15px;background-color:#FAFAFA;border-radius:4px;border:1px solid #ebebeb}
 .tab1_content h4{font-size:16px}
 .detail_section{width:100%}
-.continue_btn{background-color:#C59D93;display:flex;justify-content:center;align-items:center;color:#fff;width:100%;border-radius:5px;padding:10px;border:none;margin-top:20px}
+.continue_btn{background-color:#C59D93;display:flex;border: 2px solid #C59D93;justify-content:center;align-items:center;color:#fff;width:100%;border-radius:5px;padding:10px;margin-top:20px}
+.continue_btn:hover{background: #fff;color: #C59D93;border: 2px solid #C59D93;box-shadow: 0 0px 5px 0 rgba(138, 155, 165, .15);}
 .iti--allow-dropdown{width:100%}
 .return_bag{font-size:13px}
 /* product cart Details */
